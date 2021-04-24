@@ -52,6 +52,7 @@ body .inner {
   margin: 0 auto;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
+  padding: 0 16px;
 }
 
 @media screen and (max-width: 767px) {
@@ -643,11 +644,12 @@ results
 =========================*/
 .results {
   margin-top: 215px;
+  max-width: 1240px;
 }
 
 @media screen and (min-width: 768px) {
   .results {
-    padding-left: 40px;
+    margin-left: auto;
   }
 }
 
@@ -1152,7 +1154,7 @@ faqs
   transition: all .3s ease 0s;
 }
 
-.faqs .faqs-inner .faqs-items .faqs-item .faqs-box .faqs-box-q .faqs-box-q-icon .box-q-icon-bar2.is-open {
+.faqs .faqs-inner .faqs-items .faqs-item .faqs-box .faqs-box-q .faqs-box-q-icon.is-open .box-q-icon-bar2 {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
@@ -1465,7 +1467,8 @@ contact
 .contact .contact-inner .contact-form form .contact-list .contact-item .contact-item-input select {
   padding: 8px;
   color: #3E3E3E;
-  outline: 1px solid #707070;
+  border-color: #707070;
+  border-radius: 0px;
   width: 177px;
   font-size: 16px;
 }
