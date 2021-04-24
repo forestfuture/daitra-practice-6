@@ -8,13 +8,13 @@ $hover-after:#F18900;
 
 $layout-width-inner:1200px;
 
-// $font-family-default: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Droid Sans", sans-serif;
+$font-family-default: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Droid Sans", sans-serif;
 // $font-family-english: "Montserrat", sans-serif;
 
 $breakpoints: (
 
 'sp': 'screen and (max-width: 767px)', 
-// 'tab': 'screen and (min-width: 768px) and (max-width:#{$layout-width-inner})',
+'tab': 'screen and (min-width: 768px) and (max-width:#{$layout-width-inner})',
 'pc': 'screen and (min-width:768px)'
 ) !default;
 
@@ -79,6 +79,7 @@ body{
         max-width: $layout-width-inner;
         margin: 0 auto;
         box-sizing: content-box;
+        padding: 0 16px;
 
         @include mq(sp){
             padding: 0 16px;
@@ -621,9 +622,10 @@ results
 =========================*/ 
 .results{
     margin-top: 215px;
+    max-width: 1240px;
     
     @include mq(pc){
-        padding-left: 40px;            
+        margin-left: auto;            
     }
 
     @include mq(sp){
@@ -1055,11 +1057,14 @@ faqs
                                 position: absolute;
                                 left: 50%;
                                 transform: translateX(-50%);
-                                transition: all .3s ease 0s ;
+                                transition: all .3s ease 0s ;  
+                            }
 
-                                &.is-open{
-                                    transform: rotate(90deg);    
-                                }
+                            &.is-open{
+
+                                .box-q-icon-bar2{
+                                   transform: rotate(90deg);   
+                                }      
                             }
                         }   
                     }
@@ -1343,7 +1348,8 @@ contact
                             select{
                                 padding: 8px;
                                 color: $color-dark;
-                                outline: 1px solid rgba(112, 112, 112, 1);
+                                border-color: rgba(112, 112, 112, 1);
+                                border-radius: 0px;
                                 width: 177px;
                                 font-size: 16px;
 
