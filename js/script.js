@@ -4,6 +4,7 @@ $(document).ready(function() {
   });
 
 let drawer = $(".drawer");
+
 // drawer-操作
 $(".drawer-toggle").on("click", function() {
     $(".drawer-hamburger-icon").toggleClass("nav-open");
@@ -46,38 +47,36 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 // スムーズスクロール
-
-$('a[href^="#"]').on("click", function(){
-    var id = $(this).attr("href");
+jQuery('a[href^="#"]').on("click", function(){
+    var id = jQuery(this).attr("href");
     var position = 0;
-    var headerHeight = $(".header").innerHeight();
+    var headerHeight = jQuery("#js-header").innerHeight();
 
     if(window.matchMedia('(max-width: 766px)').matches){
-        x=2
+        var x = 2
     }else{
-        x=1
+        var x = 1
     }
 
     if(id != "#"){         
-        var position = $(id).offset().top - (headerHeight*x);    
+        var position = jQuery(id).offset().top - (headerHeight * x);    
     }
     
-    $("html, body").animate({
+    jQuery("html, body").animate({
         scrollTop:position
     },
-    500);
+    200);
 });
 
 // Q & A
 $(function(){
     for(var i = 0; i < 2; i++){
         $(".faqs-box-a").eq(i).slideToggle();
-        $(".box-q-icon-bar2").eq(i).toggleClass("is-open");
     }
     
-    $(".faqs-box-q-icon").on("click", function(){
-        $(this).parent().next().slideToggle();
-        $(this).children(".box-q-icon-bar2").toggleClass("is-open");    
+    $(".faqs-box-q").on("click", function(){
+        $(this).next().slideToggle();
+        $(this).children(".faqs-box-q-icon").toggleClass("is-open");    
     })
 })
 
@@ -118,7 +117,6 @@ $form.submit(function(e) {
     return false; 
   }); 
 
-
 // formの入力確認
 let $submit = $("#js-submit")
 $( "#js-form input, #js-form textarea" ).on("change", function(){
@@ -137,5 +135,5 @@ $( "#js-form input, #js-form textarea" ).on("change", function(){
 })
 
 // wow
-new WOW().init();
+// new WOW().init();
 
