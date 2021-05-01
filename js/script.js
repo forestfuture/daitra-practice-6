@@ -65,7 +65,7 @@ jQuery('a[href^="#"]').on("click", function(){
     jQuery("html, body").animate({
         scrollTop:position
     },
-    200);
+    800);
 });
 
 // Q & A
