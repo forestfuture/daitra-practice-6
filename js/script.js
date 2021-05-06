@@ -66,6 +66,7 @@ jQuery('a[href^="#"]').on("click", function(){
         scrollTop:position
     },
     800);
+    return false;
 });
 
 // Q & A
